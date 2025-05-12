@@ -7,7 +7,7 @@ from pages.main_page import MainPage
 @pytest.fixture(scope='function')
 def chromium_page() -> Page:
     with sync_playwright() as playwright:
-        chromium = playwright.chromium.launch(headless=False)
+        chromium = playwright.chromium.launch(headless=True)
         context = chromium.new_context()
         yield context.new_page()
 
